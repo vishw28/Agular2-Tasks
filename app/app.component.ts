@@ -1,8 +1,9 @@
 import {Component} from 'angular2/core'
 import {CoursesComponent} from "./course.component";
 import {AuthorComponent} from "./author.component";
-import {FavouriteComponenet} from "./favourite.componenet";
+import {FavouriteComponenet} from "./favourite.component";
 import {HeartComponent} from "./heart.component"
+import {VoteComponent} from "./vote.component";
 
 
 @Component({
@@ -11,6 +12,7 @@ import {HeartComponent} from "./heart.component"
                 <authors></authors>
                 <favourite></favourite>
                 <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></like>
+                <vote [totalVotes]="vote.totalVotes"[myVote]="vote.myVote" (vote)="onVote($event)"></vote>
                  <!--<button class="btn btn-primary"
                         [class.active]="isActive"
                         [style.background]="isActive ? 'blue':'black'"
@@ -20,12 +22,20 @@ import {HeartComponent} from "./heart.component"
                 Preview:{{title}}
                 
 `,
-    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent]
+    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent,VoteComponent]
 })
 export class AppComponent {
     tweet = {
         iLike :false,
         totalLikes :10
             }
+    vote = {
+        totalVotes:10,
+        myVote:0
+    }
+
+    onVote($event){
+        console.log($event);
+    }
 
 }
