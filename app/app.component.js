@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./course.component", "./author.component", "./favourite.componenet"], function(exports_1, context_1) {
+System.register(['angular2/core', "./course.component", "./author.component", "./favourite.componenet", "./heart.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./course.component", "./author.component", ".
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_component_1, author_component_1, favourite_componenet_1;
+    var core_1, course_component_1, author_component_1, favourite_componenet_1, heart_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,16 +25,23 @@ System.register(['angular2/core', "./course.component", "./author.component", ".
             },
             function (favourite_componenet_1_1) {
                 favourite_componenet_1 = favourite_componenet_1_1;
+            },
+            function (heart_component_1_1) {
+                heart_component_1 = heart_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.tweet = {
+                        iLike: false,
+                        totalLikes: 10
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "  <courses></courses>\n                <authors></authors>\n                <favourite></favourite>\n                 <!--<button class=\"btn btn-primary\"\n                        [class.active]=\"isActive\"\n                        [style.background]=\"isActive ? 'blue':'black'\"\n                        (click)=\"onClick()\">submit</button>-->\n                <input type=\"text\" [(ngModel)]=\"title\"/>\n                <input type=\"button\"(click)=\"title=''\" value=\"Clear\"/>\n                Preview:{{title}}\n                \n",
-                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favourite_componenet_1.FavouriteComponenet]
+                        template: "  <courses></courses>\n                <authors></authors>\n                <favourite></favourite>\n                <like [totalLikes]=\"tweet.totalLikes\" [iLike]=\"tweet.iLike\"></like>\n                 <!--<button class=\"btn btn-primary\"\n                        [class.active]=\"isActive\"\n                        [style.background]=\"isActive ? 'blue':'black'\"\n                        (click)=\"onClick()\">submit</button>-->\n                <input type=\"text\" [(ngModel)]=\"title\"/>\n                <input type=\"button\"(click)=\"title=''\" value=\"Clear\"/>\n                Preview:{{title}}\n                \n",
+                        directives: [course_component_1.CoursesComponent, author_component_1.AuthorComponent, favourite_componenet_1.FavouriteComponenet, heart_component_1.HeartComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
