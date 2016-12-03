@@ -4,7 +4,8 @@ import {AuthorComponent} from "./author.component";
 import {FavouriteComponenet} from "./favourite.component";
 import {HeartComponent} from "./heart.component"
 import {VoteComponent} from "./vote.component";
-
+import {TweetComponent} from "./tweet.component"
+import {TweetsComponent} from "./tweets.component"
 
 @Component({
     selector: 'my-app',
@@ -21,8 +22,10 @@ import {VoteComponent} from "./vote.component";
                 <input type="button"(click)="title=''" value="Clear"/>
                 Preview:{{title}}
                 
+                <tweets></tweets>
+                
 `,
-    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent,VoteComponent]
+    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent,VoteComponent,TweetComponent,TweetsComponent]
 })
 export class AppComponent {
     tweet = {
