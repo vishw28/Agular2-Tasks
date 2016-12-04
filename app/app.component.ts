@@ -4,8 +4,9 @@ import {AuthorComponent} from "./author.component";
 import {FavouriteComponenet} from "./favourite.component";
 import {HeartComponent} from "./heart.component"
 import {VoteComponent} from "./vote.component";
-import {TweetComponent} from "./tweet.component"
-import {TweetsComponent} from "./tweets.component"
+import {TweetComponent} from "./tweet.component";
+import {TweetsComponent} from "./tweets.component";
+import {ZippyComponent} from "./zippy.component";
 
 @Component({
     selector: 'my-app',
@@ -24,8 +25,14 @@ import {TweetsComponent} from "./tweets.component"
                 
                 <tweets></tweets>
                 
+                <zippy title="Who can see my stuff?">
+                     content who can see my stuff
+                </zippy>
+                <zippy title="Who can contact me?">
+                     content who can contact me   
+                </zippy>
 `,
-    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent,VoteComponent,TweetComponent,TweetsComponent]
+    directives:[CoursesComponent,AuthorComponent,FavouriteComponenet,HeartComponent,VoteComponent,TweetComponent,TweetsComponent,ZippyComponent]
 })
 export class AppComponent {
     tweet = {
